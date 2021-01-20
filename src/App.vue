@@ -1,76 +1,41 @@
 <template>
-  <div id='app'>
-    <div class="Personalbox">
-      <personaltop class="leftbox"></personaltop>
-     <persoal class="leftbox">
-     </persoal>
-    </div>
-    <div class="Personalright">
-     <router-view/>  
-    </div>
-   
-  </div>
-</template>
+   <div id='app'>
+       <mainbox></mainbox>
+      <keep-alive>
+            <router-view/>
+      </keep-alive> 
+   </div>
+ </template>
 
-<script>
- import Home from 'views/home/Home.vue';
- import Persoal from 'components/common/persoal/Persoal.vue';
- import Personaltop from 'components/content/PersonalTop.vue';
-  export default {
-    name:'app',
-    components: {
-         Home,
-         Persoal,
-         Personaltop,
+ <script>
+import mainbox from 'views/Mainbox/mainbox.vue';
+   export default {
+     name:'app',
+     components: {
+          mainbox,
+     },
+     data () {
+       return{
+
+       }
+     },
+    methods:{
+    // 监听窗口滚动
+    isScroll(){
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if(scrollTop == 0)
+      {
+        //滚动条为0
+        this.navShadow = false;
+      }else {
+        //滚动条不为0
+        this.navShadow = true;
+      }
     },
-    data () {
-        
-      return {
+  },
+   }
+ </script>
 
-      };
-    },
-    props: {
-
-    },
-    computed: {
-
-    },
-    methods: {
-
-    },
-    created(){
-
-    },
-    mounted(){
-
-    },
-    activated(){
-
-    },
-    destroyed(){
-
-    },
-  }
-</script>
-
-<style>
-@import 'assets/css/base.css';
-#app{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: #EEEEEE;
-}
-.Personalbox{
-  width: 400px;
-  height: 100%;
-  padding-left:120px;
-}
-.leftbox{
-  margin-bottom: 20px;
-}
-.Personalright{
-flex: 1;
-}
-
-</style>
+ <style>
+ @import 'assets/css/base.css';
+ </style>

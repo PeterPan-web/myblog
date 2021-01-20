@@ -1,7 +1,10 @@
 <!-- 组件说明 -->
 <template>
   <div class='Search'>
-    
+        <header>
+      <div class="explain">
+      </div>
+    </header>
   </div>
 </template>
 

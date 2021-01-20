@@ -1,7 +1,10 @@
 <!-- 组件说明 -->
 <template>
-  <div id='Home'>
-    home
+  <div>
+    <header>
+      <div class="explain">
+      </div>
+    </header>
   </div>
 </template>
 <script>
@@ -39,7 +42,5 @@
   }
 </script>
 <style>
-#Home{
-  height: 100%;
-}
+
 </style>

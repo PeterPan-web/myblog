@@ -6,7 +6,7 @@ const Home = () => import("views/home/Home")
 const About = () => import("views/about/About")
 const Books = () => import("views/books/Books")
 const Search = () => import("views/search/Search")
-
+const Details = () => import("views/details/Details")
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,14 +17,18 @@ const routes = [
     path: '/home',
     component: Home
   },{
+    path: '/books',
+    component: Books
+  },
+  {
     path: '/about',
     component: About
   },{
-    path: '/books',
-    component: Books
-  },{
     path: '/search',
     component: Search
+  },{
+    path: '/details',
+    component: Details
   }
 ]
 
@@ -33,5 +37,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)}
 
 export default router
