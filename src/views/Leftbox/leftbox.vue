@@ -3,7 +3,7 @@
   <div id='leftbox'>
     <div class="left-wrapper-fixed">
             <div class="user-wrapper">
-              <img src="~assets/img/dog.jpg">
+              <img src="~assets/img/face.jpg">
               <p class="user-name">PeterPan-web的博客</p>
               <p class="user-email">这是新手的第一次尝试</p>
             </div>
@@ -21,9 +21,9 @@
                   <i class="iconfont icon-tag"></i>
                   <p>关于</p>
                 </li>
-                <li @click="changeMenu('/search')">
+                <li @click="changeMenu('/guestbook')">
                   <i class="iconfont icon-search"></i>
-                  <p>搜索</p>
+                  <p>留言板</p>
                 </li>
               </ul>
             </div>
@@ -72,14 +72,14 @@
 
 <style>
 .left-wrapper{
-    flex:  0 0 200px;
-    width: 200px;
+    flex:  0 0 240px;
+    width: 240px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   }
   .left-wrapper-fixed{
     position: fixed;
     top: 0;
-    width: 200px;
+    width: 240px;
     height: 100%;
     z-index: 2;
   }

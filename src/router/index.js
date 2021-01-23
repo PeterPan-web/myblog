@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 const Home = () => import("views/home/Home")
 const About = () => import("views/about/About")
 const Books = () => import("views/books/Books")
-const Search = () => import("views/search/Search")
+const Guestbook = () => import("views/guestbook/Guestbook")
 const Details = () => import("views/details/Details")
 Vue.use(VueRouter)
 
@@ -24,8 +24,8 @@ const routes = [
     path: '/about',
     component: About
   },{
-    path: '/search',
-    component: Search
+    path: '/guestbook',
+    component: Guestbook
   },{
     path: '/details',
     component: Details

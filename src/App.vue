@@ -38,4 +38,5 @@ import mainbox from 'views/Mainbox/mainbox.vue';
 
  <style>
  @import 'assets/css/base.css';
+
  </style>

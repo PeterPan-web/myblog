@@ -1,6 +1,7 @@
 module.exports={
   configureWebpack:{
     resolve:{
+      extensions:[],
       alias: {
         "assets":"@/assets",
         "components":"@/components",
@@ -8,6 +9,7 @@ module.exports={
         "content":"@/components/content",
         "views":"@/views",
         "router":"@/router",
+        'network':'@/network',
       }
     }
   }

@@ -1,27 +1,35 @@
 import axios from 'axios'
 
-export function request(config) {
-  const instance = new axios.create({
-    //baseURL:'http://123.207.32.32:8000',
-    baseURL:'http://adi-v3.dev',
+const instance =axios.create({
+    baseURL:'https://peterpan-web-default-rtdb.firebaseio.com',//baseURL会在发送请求的时候拼接在url参数的前面
     timeout:5000
-  });
+})
 
-  // 请求拦截器
-  instance.interceptors.request.use(config => {
-    //拦截后需要将拦截下来的请求数据返回发送
+instance.interceptors.request.use(function (config) {
     return config;
-  }, err => {
+}, function (error) {
+    return Promise.reject(error);
+});
+instance.interceptors.response.use(function (response) {
+    return response;
+}, function (error) {
+    return Promise.reject(error);
+});
 
-  })
+export function get(url,params) {
+    return instance.get(url,{
+        params
+    })
+}
 
-  // 相应拦截器
-  instance.interceptors.response.use(res => {
-    // 拦截后需要将拦截下来处理成的结果返回
-    return res.data
-  }, err => {
-    console.log(err)
-  })
+export function post(url,data) {
+    return instance.post(url,data)
+}
 
-  return instance(config)
+export  function del(url) {
+    return instance.delete(url)
+}
+
+export  function put(url,data) {
+    return instance.put(url,data)
 }

@@ -46,7 +46,7 @@ import leftbox from 'views/Leftbox/leftbox.vue';
     },
     methods: {
     //切换左边菜单栏显示状态
-asideStatus(){
+    asideStatus(){
       this.menuStatus = !this.menuStatus;
       let self = this;
       if(this.menuStatus)
@@ -161,13 +161,13 @@ position: relative;
   }
   @keyframes moveLeft
   {
-    from {left:200px;}
+    from {left:240px;}
     to {left:0px;}
   }
   @keyframes moveRight
   {
     from {left:0px;}
-    to {left:200px;}
+    to {left:240px;}
   }
 
   .width-amplify{
