@@ -24,6 +24,8 @@
 <script>
     export default {
       name: "Details",
+      components:{
+      },
       data () {
         return {
           mdContent:"## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n> 查看样式 MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n> 查看样式 MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n## MarkDown\n> 查看样式 ",
@@ -40,7 +42,7 @@
 
 <style scoped>
   header{
-    height: 210px;
+    height: 200px;
   }
   .md{
     box-shadow: none;

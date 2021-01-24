@@ -1,10 +1,7 @@
 <!-- 组件说明 -->
 <template>
   <div>
-    <header>
-      <div class="explain">
-      </div>
-    </header>
+    <header></header>
     <div class="index-wrapper">
       <ul>
       <li class="blog-wrapper" @click="bookspath">
@@ -62,6 +59,7 @@
   }
 </script>
 <style>
+
 .index-wrapper{
     max-width: 960px;
     margin: 30px auto 40px;

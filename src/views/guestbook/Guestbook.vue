@@ -1,10 +1,7 @@
 <!-- 组件说明 -->
 <template>
   <div>
-    <header>
-      <div class="explain">
-      </div>
-    </header>
+    <header></header>
     <div class="index-wrapper">
       <div class="blog-wrapper" >
           <div class="blog-time">{{nowDate}}{{nowWeek}}{{nowTime}}</div>
@@ -31,13 +28,13 @@
               <el-button type="success" round  @click="open">提交</el-button>
           </div>
         </div>
-        <div class="blog-wrapper blog-color"  v-for="item in getblogs" :key="item.id">
+        <div class="blog-show blog-color"  v-for="item in getblogs" :key="item.id">
           <p class="blog-time">{{item.nowDate}}{{item.nowWeek}}{{item.nowTime}}</p>
           <div class="blog-content">
           发布人：{{item.autor}}
           </div>
           <div class="blog-content">
-          内容{{item.content}}
+          内容:{{item.content}}
           </div>
         </div>
     </div> 
@@ -168,10 +165,17 @@ import{get,post} from'network/request'
 </script>
 <style>
 .index-wrapper{
-    max-width: 960px;
+    max-width: 300px;
     margin: 30px auto 40px;
   }
   .blog-wrapper{
+    margin-bottom: 30px;
+    padding: 12px 12px 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(151,151,151,0.58);
+  }
+  .blog-show{
     margin-bottom: 30px;
     padding: 12px 12px 0;
     background: #fff;
@@ -198,24 +202,17 @@ import{get,post} from'network/request'
   .blog-time{
     line-height: 24px;
     margin: 0 0 10px;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: bold;
     color: #727272;
-    overflow: hidden;
   }
   .blog-content{
     word-break: break-all;
     padding-bottom: 20px;
-    line-height: 1.8;
+    line-height: 1.5;
+    font-size: 17px;
   }
-  .blog-more{
-    display: inline-block;
-    padding: 0 6px;
-    font-weight: 500;
-    color: #3f51b5 !important;
-    border: none !important;
-    border-radius: 3px;
-  }
+
   .blog-tag{
     position: relative;
     margin: 0 -12px;

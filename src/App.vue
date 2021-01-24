@@ -1,9 +1,6 @@
 <template>
    <div id='app'>
        <mainbox></mainbox>
-      <keep-alive>
-            <router-view/>
-      </keep-alive> 
    </div>
  </template>
 
